@@ -1,5 +1,5 @@
 <template>
-  <div>
-    good night!
+  <div class="doc">
+    doc
   </div>
 </template>
