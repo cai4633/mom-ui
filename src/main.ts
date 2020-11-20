@@ -21,6 +21,24 @@ const router = createRouter({
     {
       path: "/doc",
       component: Doc,
+      children: [
+        {
+          path: "introduce",
+          component: () => import("./components/Introduce.vue"),
+        },
+        {
+          path: "quickstart",
+          component: () => import("./components/Quickstart.vue"),
+        },
+        {
+          path: "button",
+          component: () => import("./components/Button.vue"),
+        },
+        {
+          path: "switch",
+          component: () => import("./components/Switch.vue"),
+        },
+      ],
     },
     {
       path: "/:pathMatch(.*)*",
