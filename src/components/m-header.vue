@@ -11,7 +11,7 @@
     <ul>
       <li><a :href="github">Github</a></li>
       <li><a :href="gitee">Gitee</a></li>
-      <li><a href="/#/doc">文档</a></li>
+      <li><a href="/#/doc/introduce">文档</a></li>
     </ul>
   </header>
 </template>

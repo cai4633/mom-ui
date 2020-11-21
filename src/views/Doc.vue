@@ -23,7 +23,9 @@
         </ul>
       </aside>
       <main>
-        <router-view></router-view>
+        <div class="markdown-body">
+          <router-view></router-view>
+        </div>
       </main>
     </div>
   </div>
@@ -66,7 +68,7 @@ export default {
           line-height: 1.5;
           a {
             display: block;
-            min-width: 8em;
+            min-width: 12em;
             padding: 0.5em 1.2em;
           }
         }
@@ -76,6 +78,11 @@ export default {
       flex: 1;
       overflow: auto;
       box-shadow: inset 0px 0px 2px 0px #ccc;
+      padding: 0em 2em;
+      .markdown-body {
+        height: 100%;
+        overflow: auto;
+      }
     }
   }
 }

@@ -7,7 +7,7 @@
         <h2>一个好用的 Vue3 UI 框架</h2>
         <ul>
           <li><a :href="github">Github</a></li>
-          <li><a href="/doc">开始</a></li>
+          <li><a href="/#/doc/quickstart">开始</a></li>
         </ul>
       </div>
     </div>

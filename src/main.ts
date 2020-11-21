@@ -4,8 +4,10 @@ import "./index.css"
 import Home from "./views/Home.vue"
 import Doc from "./views/Doc.vue"
 import NotFound from "./views/NotFound.vue"
-
+import "github-markdown-css"
+import "./common/scss/md-base.scss"
 import { createRouter, createWebHashHistory } from "vue-router"
+
 const history = createWebHashHistory()
 const router = createRouter({
   history,
@@ -24,11 +26,11 @@ const router = createRouter({
       children: [
         {
           path: "introduce",
-          component: () => import("./components/Introduce.vue"),
+          component: async () => import("./markdown/intro.md"),
         },
         {
           path: "quickstart",
-          component: () => import("./components/Quickstart.vue"),
+          component: async () => import("./markdown/getStarted.md"),
         },
         {
           path: "button",
