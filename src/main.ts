@@ -38,7 +38,7 @@ const router = createRouter({
         },
         {
           path: "switch",
-          component: () => import("./components/Switch.vue"),
+          component: () => import("./views/switch-demo.vue"),
         },
       ],
     },

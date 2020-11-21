@@ -1,9 +1,9 @@
 // vite.config.ts
-import type { UserConfig } from 'vite'
-import vitePluginVuedoc from 'vite-plugin-vuedoc'
+import type { UserConfig } from "vite"
+import vitePluginVuedoc from "vite-plugin-vuedoc"
 
 const config: UserConfig = {
-  plugins: [vitePluginVuedoc()]
+  plugins: [vitePluginVuedoc()],
 }
 
 export default config
