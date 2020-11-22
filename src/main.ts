@@ -1,6 +1,6 @@
 import { createApp } from "vue"
 import App from "./App.vue"
-import "./index.css"
+import "./index.scss"
 import Home from "./views/Home.vue"
 import Doc from "./views/Doc.vue"
 import NotFound from "./views/NotFound.vue"
@@ -34,7 +34,7 @@ const router = createRouter({
         },
         {
           path: "button",
-          component: () => import("./components/Button.vue"),
+          component: () => import("./views/button-demo.vue"),
         },
         {
           path: "switch",
