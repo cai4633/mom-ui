@@ -40,6 +40,10 @@ const router = createRouter({
           path: "switch",
           component: () => import("./views/switch-demo.vue"),
         },
+        {
+          path: "modal",
+          component: () => import("./views/modal-demo.vue"),
+        },
       ],
     },
     {

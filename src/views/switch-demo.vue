@@ -1,6 +1,6 @@
 <template>
 	<div class="switch-demo">
-		<h2>基础用法：</h2>
+		<h3>基础用法：</h3>
 		<Switch v-model:checked="check"></Switch>
 	</div>
 </template>

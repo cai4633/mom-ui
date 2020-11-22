@@ -20,6 +20,9 @@
 					<li>
 						<router-link to="/doc/switch">switch 滑动开关</router-link>
 					</li>
+					<li>
+						<router-link to="/doc/modal">modal 对话框</router-link>
+					</li>
 				</ul>
 			</aside>
 			<main>

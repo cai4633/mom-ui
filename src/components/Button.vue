@@ -1,5 +1,5 @@
 <template>
-	<button class="c-button" :class="[size, type]" :class="{ disabled, loading }">
+	<button class="c-button" :class="{ disabled, loading, [size]: size, [type]: type }">
 		<svg class="icon" aria-hidden="true" v-if="loading">
 			<use xlink:href="#icon-loading"></use>
 		</svg>
@@ -29,6 +29,7 @@ export default {
 
 <style lang="scss">
 .c-button {
+	border: 1px solid #000;
 	$w: 90px;
 	$h: 50px;
 	$bc-primary: #108ee9;
@@ -38,7 +39,7 @@ export default {
 	$color-primary: #fff;
 	$color-ghost: $bc-primary;
 	$color-warning: #fff;
-	$color-default: #000;
+	$color-default: #444;
 	font-size: 14px;
 	border-radius: 5px;
 	text-align: center;
@@ -57,10 +58,6 @@ export default {
 	&:hover {
 		opacity: 0.8;
 		box-shadow: 0 0 2px #bbb;
-	}
-
-	& + & {
-		margin-left: 2em;
 	}
 
 	&.normal {
@@ -126,6 +123,10 @@ export default {
 		background-color: $bc-warning;
 		color: $color-warning;
 		border: 1px solid $bc-warning;
+	}
+
+	& + & {
+		margin-left: 1em;
 	}
 }
 </style>
