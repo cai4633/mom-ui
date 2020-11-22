@@ -61,7 +61,7 @@ export default {
 	}
 
 	&.normal {
-		width: $w;
+		min-width: $w;
 		height: 0.8 * $h;
 		line-height: 0.8 * $h;
 	}
@@ -94,12 +94,12 @@ export default {
 		}
 	}
 	&.big {
-		width: 1.8 * $w;
+		min-width: 1.8 * $w;
 		height: $h;
 		line-height: $h;
 	}
 	&.small {
-		width: 0.8 * $w;
+		min-width: 0.8 * $w;
 		height: 0.6 * $h;
 		line-height: 0.6 * $h;
 	}

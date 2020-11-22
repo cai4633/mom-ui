@@ -10,20 +10,14 @@
 					<Button size="small" @click.stop="ok" type="primary">确认</Button>
 				</section>
 			</main>
-		</div></teleport
-	>
+		</div>
+	</teleport>
 </template>
 <script lang="ts">
 import Button from "./Button.vue";
 import { SetupContext, Teleport } from "vue";
+import { Props } from "./showModal";
 
-interface Props {
-	visiable: boolean;
-	title: string;
-	message: string;
-	onok: () => boolean | undefined;
-	oncancel: () => boolean | undefined;
-}
 export default {
 	props: {
 		visiable: { type: Boolean, default: false },
@@ -54,7 +48,6 @@ export default {
 
 <style lang="scss">
 .c-modal {
-	border: 1px solid #000;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -70,13 +63,15 @@ export default {
 		padding: 20px 30px;
 		h3 {
 			font-weight: 500;
-			font-size: 1.2em;
+			font-size: 1.1em;
 			margin: 0;
 		}
 		p {
 			padding: 20px 0px;
 			min-width: 20em;
 			max-height: 4em;
+			font-size: 0.9em;
+			color: #333;
 		}
 		section.action {
 			text-align: right;
