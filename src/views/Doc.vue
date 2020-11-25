@@ -15,13 +15,16 @@
 				<h2>组件</h2>
 				<ul>
 					<li>
-						<router-link to="/doc/button">button 按钮</router-link>
+						<router-link to="/doc/button">Button 按钮</router-link>
 					</li>
 					<li>
-						<router-link to="/doc/switch">switch 滑动开关</router-link>
+						<router-link to="/doc/switch">Switch 滑动开关</router-link>
 					</li>
 					<li>
-						<router-link to="/doc/modal">modal 对话框</router-link>
+						<router-link to="/doc/modal">Modal 对话框</router-link>
+					</li>
+					<li>
+						<router-link to="/doc/tabs">Tabs 标签页</router-link>
 					</li>
 				</ul>
 			</aside>

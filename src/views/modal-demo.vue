@@ -1,5 +1,5 @@
 <template>
-	<div class="button-demo">
+	<div class="c-modal-demo">
 		<section>
 			<h3>基础用法：</h3>
 			<p>通过点击打开对话框</p>
