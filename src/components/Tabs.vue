@@ -23,6 +23,7 @@
 </template>
 
 <script lang="ts">
+import Tab from "./Tab.vue";
 import { SetupContext, ref, Ref, onMounted, reactive, onUpdated } from "vue";
 export default {
 	props: {
@@ -30,6 +31,12 @@ export default {
 	},
 	setup(props, context: SetupContext<any>) {
 		const slots = context.slots.default();
+		// 检查用户传递给Tabs组件的slot类型
+		slots.forEach((slot) => {
+			if (slot.type !== Tab) {
+				throw Error("Tabs组件中只能包含Tab组件！");
+			}
+		});
 		const lis = reactive<HTMLElement[]>([]);
 		const tabs = ref<HTMLElement>();
 		const indicator = ref<HTMLElement>();
