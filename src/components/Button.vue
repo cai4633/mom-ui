@@ -23,7 +23,6 @@ export default {
 		disabled: { type: Boolean, default: false },
 		loading: { type: Boolean, default: false },
 	},
-	setup(props: Props, context: SetupContext) {},
 };
 </script>
 
