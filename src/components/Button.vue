@@ -28,11 +28,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../common/scss/var.scss";
+
 .c-button {
 	border: 1px solid #000;
 	$w: 90px;
 	$h: 50px;
-	$bc-primary: #108ee9;
+	$bc-primary: $highlight;
 	$bc-ghost: #fff;
 	$bc-default: #fff;
 	$bc-warning: #e94f4f;
