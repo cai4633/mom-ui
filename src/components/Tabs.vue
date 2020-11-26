@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import Tab from "./Tab.vue";
-import { SetupContext, ref, Ref, onMounted, reactive, onUpdated } from "vue";
+import { SetupContext, ref, Ref, onMounted, reactive, onUpdated, watchEffect } from "vue";
 export default {
 	props: {
 		selectedIndex: { type: Number, default: 0 },
@@ -43,17 +43,13 @@ export default {
 		const selected = (index: number) => {
 			context.emit("update:selectedIndex", index);
 		};
-		const setIndicatorStatus = () => {
-			const { width, left: left1 } = lis[props.selectedIndex].getBoundingClientRect();
-			const { left: left2 } = tabs.value.getBoundingClientRect();
-			indicator.value.style.width = `${width}px`;
-			indicator.value.style.left = `${left1 - left2}px`;
-		};
-		onUpdated(() => {
-			setIndicatorStatus();
-		});
 		onMounted(() => {
-			setIndicatorStatus();
+			watchEffect(() => {
+				const { width, left: left1 } = lis[props.selectedIndex].getBoundingClientRect();
+				const { left: left2 } = tabs.value.getBoundingClientRect();
+				indicator.value.style.width = `${width}px`;
+				indicator.value.style.left = `${left1 - left2}px`;
+			});
 		});
 		return { slots, selected, lis, tabs, indicator };
 	},
