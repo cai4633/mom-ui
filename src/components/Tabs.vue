@@ -63,7 +63,7 @@ export default {
 	ul.c-tabs-tag {
 		position: relative;
 		vertical-align: top;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid #ddd;
 		margin: auto;
 		padding: 0;
 		li {

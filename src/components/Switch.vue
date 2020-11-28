@@ -22,7 +22,6 @@ export default {
 		const toggleBtn = () => {
 			context.emit("update:checked", !props.checked);
 		};
-
 		return { toggleBtn };
 	},
 };

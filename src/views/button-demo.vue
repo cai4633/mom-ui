@@ -20,11 +20,13 @@
 			<h3>disabled 和 loading</h3>
 			<Button type="primary" disabled>disabled</Button>
 			<Button type="ghost" loading> loading </Button>
+			<pre v-text="ButtonDemo._source"></pre>
 		</section>
 	</div>
 </template>
 <script lang="ts">
 import Button from "../components/Button.vue";
+import ButtonDemo from "../components/Button.demo.vue";
 export default {
 	components: {
 		Button,
@@ -33,7 +35,7 @@ export default {
 		const onclick = (e) => {
 			console.log("click");
 		};
-		return { onclick };
+		return { onclick, ButtonDemo };
 	},
 };
 </script>
