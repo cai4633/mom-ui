@@ -13,7 +13,7 @@
 				<div class="demo-code-wrapper">
 					<div class="demo-action"><Button type="primary" size="small">查看代码</Button></div>
 					<div class="demo-code">
-						<pre v-text="TabsDemo._source"></pre>
+						<pre v-highlight><code v-text="TabsDemo._source"></code></pre>
 					</div>
 				</div>
 			</div>

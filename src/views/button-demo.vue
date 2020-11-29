@@ -20,7 +20,7 @@
 			<h3>disabled 和 loading</h3>
 			<Button type="primary" disabled>disabled</Button>
 			<Button type="ghost" loading> loading </Button>
-			<pre v-text="ButtonDemo._source"></pre>
+			<pre v-highlight><code v-text="ButtonDemo._source"></code></pre>
 		</section>
 	</div>
 </template>

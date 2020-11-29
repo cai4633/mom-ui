@@ -7,6 +7,8 @@ import NotFound from "./views/NotFound.vue"
 import "github-markdown-css"
 import "./common/scss/md-base.scss"
 import { createRouter, createWebHashHistory } from "vue-router"
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-gist.css';
 
 const history = createWebHashHistory()
 const router = createRouter({
@@ -59,4 +61,11 @@ const router = createRouter({
 
 const app = createApp(App)
 app.use(router)
+
+
+app.directive('highlight',function (el) {
+   el.querySelectorAll('pre code').forEach((block)=>{
+    hljs.highlightBlock(block)
+  })
+})
 app.mount("#app")

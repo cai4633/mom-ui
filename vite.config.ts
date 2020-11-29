@@ -2,6 +2,7 @@
 // baseParse  将模板翻译为AST
 // transform  优化AST
 // generate   生成可执行代码
+// custom-block 是针对于自定义标签（解析<demo></demo>）而言，与文件名无必然联系（xxx.demo.vue和xxx.vue 无本质区别）
 import type { UserConfig } from "vite"
 import vitePluginVuedoc from "vite-plugin-vuedoc"
 import fs from 'fs'
