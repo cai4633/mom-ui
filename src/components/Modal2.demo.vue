@@ -8,8 +8,8 @@
 </template>
 <script lang="ts">
 import { ref } from "vue";
-import showModal from "../components/showModal";
-import Button from "../components/Button.vue";
+import showModal from "../libs/showModal";
+import Button from "../libs/Button.vue";
 export default {
 	components: {
 		Button,

@@ -7,7 +7,7 @@
 	</section>
 </template>
 <script lang="ts">
-import Button from "../components/Button.vue";
+import Button from "../libs/Button.vue";
 export default {
 	components: { Button },
 };

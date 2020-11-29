@@ -9,8 +9,8 @@
 </template>
 <script lang="ts">
 import { ref } from "vue";
-import Button from "../components/Button.vue";
-import Modal from "../components/Modal.vue";
+import Button from "../libs/Button.vue";
+import Modal from "../libs/Modal.vue";
 
 interface Props {}
 export default {

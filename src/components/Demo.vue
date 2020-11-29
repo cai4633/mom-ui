@@ -18,14 +18,12 @@
 </template>
 
 <script lang="ts">
-import Tabs from "../components/Tabs.vue";
-import Tab from "../components/Tab.vue";
-import Button from "../components/Button.vue";
+import Button from "../libs/Button.vue";
 import { ref } from "vue";
 import TabsDemo from "../components/Tabs.demo.vue";
-
+// TODO 查看隐藏代码
 export default {
-	components: { Tabs, Tab, Button },
+	components: { Button },
 	props: {
 		component: { required: true },
 	},

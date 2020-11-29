@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Switch from "../components/Switch.vue";
+import Switch from "../libs/Switch.vue";
 import { ref, onUpdated } from "vue";
 export default {
 	components: { Switch },
