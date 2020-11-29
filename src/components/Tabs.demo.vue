@@ -1,4 +1,4 @@
-<demo> Tabs 代码 </demo>
+<demo> 基础用法 </demo>
 
 <template>
 	<Tabs v-model:selectedIndex="selectedIndex">
@@ -11,7 +11,7 @@
 <script lang="ts">
 import Tabs from "../components/Tabs.vue";
 import Tab from "../components/Tab.vue";
-
+import { ref } from "vue";
 export default {
 	components: { Tabs, Tab },
 	setup(props) {

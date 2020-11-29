@@ -1,20 +1,20 @@
 <template>
 	<div class="switch-demo">
-		<h3>基础用法：</h3>
-		<Switch v-model:checked="check"></Switch>
+		<Demo :component="Switch1" />
 	</div>
 </template>
 
 <script>
-import Switch from "../components/Switch.vue";
+import Switch1 from "../components/Switch.demo.vue";
+import Demo from "../components/Demo.vue";
 import { ref, onUpdated } from "vue";
 export default {
 	components: {
-		Switch,
+		Demo,
 	},
 	setup(props) {
 		const check = ref(false);
-		return { check };
+		return { check, Switch1 };
 	},
 };
 </script>

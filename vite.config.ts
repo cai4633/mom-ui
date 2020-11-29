@@ -6,7 +6,7 @@
 import type { UserConfig } from "vite"
 import vitePluginVuedoc from "vite-plugin-vuedoc"
 import fs from 'fs'
-import {baseParse} from '@vue/compiler-core'
+import {baseParse,TemplateNode} from '@vue/compiler-core'
 
 const config: UserConfig = {
   plugins: [vitePluginVuedoc()],
@@ -14,12 +14,13 @@ const config: UserConfig = {
     demo:(options)=>{
       const {path} = options
       const file = fs.readFileSync(path).toString()
-      const parsed = baseParse(file).children.find((n:any)=>n.tag==='demo')
-      const main = file.split(parsed.loc.source).join('').trim()
+      const block:any= baseParse(file).children.find((n:TemplateNode)=>n.tag==='demo') 
+      const main = file.split(block.loc.source).join('').trim()
       return `export default function (Component){
         Component._source = ${
           JSON.stringify(main)
-        }
+        };
+        Component._title = ${JSON.stringify(block.children[0].content)} //必须使用JSON.stringify()转换JS表达式，否则报错
       }`.trim()
       
     }
