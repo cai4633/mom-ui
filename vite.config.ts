@@ -10,6 +10,8 @@ import {baseParse,TemplateNode} from '@vue/compiler-core'
 
 const config: UserConfig = {
   plugins: [vitePluginVuedoc()],
+  assetsDir:'assets',
+  base:'./',
   vueCustomBlockTransforms:{
     demo:(options)=>{
       const {path} = options
