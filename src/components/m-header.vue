@@ -4,6 +4,7 @@
 			<svg class="icon" aria-hidden="true">
 				<use xlink:href="#icon-cai-ui"></use>
 			</svg>
+			<span class="name">{{ name }}</span>
 		</a>
 		<ul>
 			<li><a :href="github">Github</a></li>
@@ -16,8 +17,8 @@
 import { config } from "../../config";
 export default {
 	setup() {
-		const { github, gitee } = config;
-		return { github, gitee };
+		const { github, gitee, name } = config;
+		return { github, gitee, name };
 	},
 };
 </script>
@@ -30,11 +31,21 @@ header {
 	align-items: center;
 	border-bottom: 1px solid $color-light;
 	padding: 10px 20px;
-	.icon {
-		$width: 2em;
-		width: $width;
-		height: $width;
-		line-height: 2;
+	> a {
+		display: flex;
+		align-items: center;
+		.icon {
+			$width: 2em;
+			width: $width;
+			height: $width;
+			line-height: 2;
+		}
+		span.name {
+			margin-left: 0.5em;
+			font-weight: 600;
+			font-size: 1.5em;
+			color: $title-color;
+		}
 	}
 	ul {
 		display: flex;
