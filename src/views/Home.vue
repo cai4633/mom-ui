@@ -3,7 +3,7 @@
 		<div class="ellipse">
 			<m-header />
 			<div class="title">
-				<h1>Cai UI</h1>
+				<h1>{{name}}</h1>
 				<h2>一个好用的 Vue3 UI 框架</h2>
 				<ul>
 					<li><a :href="github">Github</a></li>
@@ -53,8 +53,8 @@ export default {
 		MHeader,
 	},
 	setup() {
-		const { github, gitee } = config;
-		return { github, gitee };
+		const { github, gitee,name } = config;
+		return { github, gitee,name };
 	},
 };
 </script>
