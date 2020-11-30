@@ -25,8 +25,6 @@ const config: UserConfig = {
         .replace(/import\s+(\w+)\s+from\s+["']([.]{2}\/libs\/\w+\.vue)["']/g, "import { $1 } from 'mom-ui'")
         .replace(/[.]{2}\/libs\/\w+(?=["'])/g, "mom-ui")
 
-      console.log(main)
-
       return `export default function (Component){
         Component._source = ${JSON.stringify(main)};
         Component._title = ${JSON.stringify(block.children[0].content)} //必须使用JSON.stringify()转换JS表达式，否则报错
