@@ -8,7 +8,7 @@
 </template>
 <script lang="ts">
 import { ref } from "vue";
-import showModal from "../libs/showModal";
+import { showModal } from "../libs/showModal";
 import Button from "../libs/Button.vue";
 export default {
 	components: {
