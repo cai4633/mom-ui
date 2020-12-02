@@ -29,7 +29,7 @@
 				</ul>
 			</aside>
 			<main>
-				<div class="aside-button">
+				<div class="aside-button" v-if="iconVisiable">
 					<Button @click.stop="toggleAside" size="small" :no-border="true">
 						<svg class="icon" aria-hidden="true">
 							<use xlink:href="#icon-icon_menu"></use>
@@ -47,8 +47,22 @@
 <script lang="ts" setup>
 import MHeader from "../components/m-header.vue";
 import Button from "../libs/Button.vue";
-import { ref } from "vue";
-export const asideVisiable = ref(false);
+import { ref, onMounted } from "vue";
+export const asideVisiable = ref(true);
+export const iconVisiable = ref(false);
+const iconVisiableInit = () => {
+	if (document.documentElement.clientWidth < 500) {
+		iconVisiable.value = true;
+		asideVisiable.value = false;
+	} else {
+		iconVisiable.value = false;
+		asideVisiable.value = true;
+	}
+};
+onMounted(() => {
+	iconVisiableInit();
+	window.onresize = iconVisiableInit;
+});
 export const toggleAside = () => {
 	asideVisiable.value = !asideVisiable.value;
 };
@@ -102,12 +116,18 @@ export default {
 			box-shadow: inset 0px 0px 2px 0px #ccc;
 			padding: 0em 2em;
 			.aside-button {
-				padding-top: 26px;
-				margin-left: -20px;
+				padding-top: 25px;
+				margin-left: -40px;
+				svg {
+					width: 1.5em;
+					height: 1.5em;
+				}
 			}
 			.markdown-body {
 				height: 100%;
-				overflow: auto;
+				flex: 1;
+				min-width: 100px;
+				max-width: 600px;
 			}
 		}
 	}

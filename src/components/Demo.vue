@@ -7,7 +7,7 @@
 					<component :is="component"></component>
 				</div>
 				<div class="demo-code-wrapper">
-					<div class="demo-action"><Button type="primary" size="small" @click="toggle">查看代码</Button></div>
+					<div class="demo-action"><Button type="primary" size="small" @click="toggle">查看源码</Button></div>
 					<div class="demo-code" v-if="codeVisible">
 						<pre v-highlight><code v-text="component._source"></code></pre>
 					</div>
@@ -38,16 +38,25 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../common/scss/var.scss";
 .c-demo {
+	width: 100%;
 	section.demo {
 		.demo-container {
-			width: 70%;
+			width: 100%;
+			overflow-x: auto;
 			box-shadow: inset 0 0 2px #aaa;
 			.demo-component {
 				padding: 30px;
+				section {
+					white-space: nowrap;
+				}
 			}
 			.demo-action {
-				padding: 10px 20px;
+				padding: 5px 20px;
+				button {
+					font-size: 0.8em;
+				}
 			}
 			.demo-code-wrapper {
 				padding: 10px;

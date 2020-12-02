@@ -130,6 +130,10 @@ export default {
 
 	&.noBorder {
 		border: none;
+		&:hover {
+			opacity: 0.8;
+			box-shadow: none;
+		}
 	}
 
 	& + & {
