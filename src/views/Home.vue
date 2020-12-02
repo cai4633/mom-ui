@@ -3,7 +3,7 @@
 		<div class="ellipse">
 			<m-header />
 			<div class="title">
-				<h1>{{name}}</h1>
+				<h1>{{ name }}</h1>
 				<h2>一个好用的 Vue3 UI 框架</h2>
 				<ul>
 					<li><a :href="github">Github</a></li>
@@ -53,8 +53,8 @@ export default {
 		MHeader,
 	},
 	setup() {
-		const { github, gitee,name } = config;
-		return { github, gitee,name };
+		const { github, gitee, name } = config;
+		return { github, gitee, name };
 	},
 };
 </script>
@@ -119,6 +119,51 @@ export default {
 						font-size: 1.4em;
 						margin-bottom: 0.2em;
 					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $narrow-width) {
+	.home {
+		main {
+			margin-top: 0px;
+			ul {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				li {
+					margin-left: 50%;
+					min-width: 278px;
+					transform: translateX(-50%);
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $mobile-width) {
+	.home {
+		.ellipse {
+			clip-path: ellipse(120% 60% at 50% 35%);
+			padding-bottom: 0;
+			.title {
+				padding: 40px 0;
+			}
+		}
+
+		main {
+			margin-top: 0px;
+			ul {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				li {
+					margin-left: 50%;
+					min-width: 220px;
+					transform: translateX(-50%);
+					margin-top: 20px;
 				}
 			}
 		}

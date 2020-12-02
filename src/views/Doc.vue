@@ -2,7 +2,7 @@
 	<div class="doc noSelect">
 		<m-header />
 		<div class="main">
-			<aside>
+			<aside v-show="asideVisiable">
 				<h2>文档</h2>
 				<ul>
 					<li>
@@ -29,6 +29,13 @@
 				</ul>
 			</aside>
 			<main>
+				<div class="aside-button">
+					<Button @click.stop="toggleAside" size="small" :no-border="true">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-icon_menu"></use>
+						</svg>
+					</Button>
+				</div>
 				<div class="markdown-body">
 					<router-view></router-view>
 				</div>
@@ -37,11 +44,16 @@
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import MHeader from "../components/m-header.vue";
-
+import Button from "../libs/Button.vue";
+import { ref } from "vue";
+export const asideVisiable = ref(false);
+export const toggleAside = () => {
+	asideVisiable.value = !asideVisiable.value;
+};
 export default {
-	components: { MHeader },
+	components: { MHeader, Button },
 };
 </script>
 
@@ -56,6 +68,9 @@ export default {
 		display: flex;
 		text-align: left;
 		height: calc(100% - 61px);
+		.markdown-body::-webkit-scrollbar {
+			display: none;
+		}
 		aside {
 			height: 100%;
 			overflow: auto;
@@ -82,9 +97,14 @@ export default {
 		}
 		main {
 			flex: 1;
+			display: flex;
 			overflow: auto;
 			box-shadow: inset 0px 0px 2px 0px #ccc;
 			padding: 0em 2em;
+			.aside-button {
+				padding-top: 26px;
+				margin-left: -20px;
+			}
 			.markdown-body {
 				height: 100%;
 				overflow: auto;

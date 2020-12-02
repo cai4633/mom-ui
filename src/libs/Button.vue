@@ -1,5 +1,5 @@
 <template>
-	<button class="c-button" :class="{ disabled, loading, [size]: size, [type]: type }">
+	<button class="c-button" :class="{ disabled, loading, [size]: size, [type]: type, noBorder }">
 		<svg class="icon" aria-hidden="true" v-if="loading">
 			<use xlink:href="#icon-loading"></use>
 		</svg>
@@ -11,16 +11,18 @@
 import { SetupContext } from "vue";
 
 interface Props {
-	type: "default" | "primary" | "warning" | "ghost";
-	size: "normal" | "big" | "small";
-	disabled: boolean;
-	loading: boolean;
+	type?: "default" | "primary" | "warning" | "ghost";
+	size?: "normal" | "big" | "small";
+	disabled?: boolean;
+	loading?: boolean;
+	noBorder?: boolean;
 }
 export default {
 	props: {
 		type: { type: String, default: "default" },
 		size: { type: String, default: "normal" },
 		disabled: { type: Boolean, default: false },
+		noBorder: { type: Boolean, default: false },
 		loading: { type: Boolean, default: false },
 	},
 };
@@ -124,6 +126,10 @@ export default {
 		background-color: $bc-warning;
 		color: $color-warning;
 		border: 1px solid $bc-warning;
+	}
+
+	&.noBorder {
+		border: none;
 	}
 
 	& + & {

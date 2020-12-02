@@ -1,3 +1,5 @@
+@import './common/scss/var.scss';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,7 +11,14 @@
 
 html {
   height: 100%;
+  font-size: 16px;
+  min-width: 320px;
+  @media screen and (max-width: $mobile-width) {
+    font-size:12px;
+  }
 }
+
+
 
 body {
   height: 100%;

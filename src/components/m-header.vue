@@ -7,8 +7,8 @@
 			<span class="name">{{ name }}</span>
 		</a>
 		<ul>
-			<li><a :href="github">Github</a></li>
-			<li><a :href="gitee">Gitee</a></li>
+			<li><a :href="github" target="_blank">Github</a></li>
+			<li><a :href="gitee" target="_blank">Gitee</a></li>
 			<li><a href="#/doc/introduce">文档</a></li>
 		</ul>
 	</header>
@@ -31,6 +31,9 @@ header {
 	align-items: center;
 	border-bottom: 1px solid $color-light;
 	padding: 10px 20px;
+	@media screen and (max-width: 400px) {
+		padding: 10px;
+	}
 	> a {
 		display: flex;
 		align-items: center;
@@ -45,6 +48,7 @@ header {
 			font-weight: 600;
 			font-size: 1.5em;
 			color: $title-color;
+			white-space: nowrap;
 		}
 	}
 	ul {
@@ -52,8 +56,11 @@ header {
 		color: $color;
 		li {
 			line-height: 1.2;
-			padding: 10px;
+			padding: 10px 0;
+			min-width: 10px;
+			flex: 1;
 			margin: 0 10px;
+			white-space: nowrap;
 			a {
 				padding: 5px;
 			}
