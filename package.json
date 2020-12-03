@@ -1,8 +1,21 @@
 {
   "name": "mom-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": {
+    "name": "cai4633",
+    "email": "46335322@qq.com"
+  },
+  "license": "MIT",
+  "keywords": ["Vue3","Typescript","UI","mom","antd"],
+  "description": "UI framework with vue3 and TS",
+  "homepage": "http://cai4633.gitee.io/mom-ui-doc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cai4633/mom-ui"
+  },
   "files": [
-    "dist/lib/*"
+    "dist/lib/*",
+    "README.md"
   ],
   "main": "dist/lib/mom-ui.js",
   "scripts": {

@@ -10,7 +10,7 @@ yarn add mom-ui
 
 or 
 
-npm install mom-ui -S
+npm install mom-ui
 ```
 
 ### 使用
