@@ -1,6 +1,6 @@
 <template>
 	<header class="m-header">
-		<a href="/" title="回到主页">
+		<a href="#/home" title="回到主页">
 			<svg class="icon" aria-hidden="true">
 				<use xlink:href="#icon-cai-ui"></use>
 			</svg>
