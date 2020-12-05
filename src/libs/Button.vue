@@ -1,5 +1,5 @@
 <template>
-	<button class="c-button" :class="{ disabled, loading, [size]: size, [type]: type, noBorder }">
+	<button class="m-button" :class="{ disabled, loading, [size]: size, [type]: type, noBorder }">
 		<svg class="icon" aria-hidden="true" v-if="loading">
 			<use xlink:href="#icon-loading"></use>
 		</svg>
@@ -31,7 +31,7 @@ export default {
 <style lang="scss">
 @import "../common/scss/var.scss";
 
-.c-button {
+.m-button {
 	border: 1px solid #000;
 	$w: 90px;
 	$h: 50px;

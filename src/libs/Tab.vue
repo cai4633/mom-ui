@@ -1,5 +1,5 @@
 <template>
-	<div class="c-tab">
+	<div class="m-tab">
 		<slot></slot>
 	</div>
 </template>

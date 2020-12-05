@@ -1,6 +1,6 @@
 <template>
-	<div class="c-tabs">
-		<ul class="c-tabs-tag" ref="tabs">
+	<div class="m-tabs">
+		<ul class="m-tabs-tag" ref="tabs">
 			<li
 				v-for="(c, index) in slots"
 				:key="index"
@@ -14,7 +14,7 @@
 			>
 				{{ c.props.title }}
 			</li>
-			<li class="c-tabs-tag-indicator" ref="indicator"></li>
+			<li class="m-tabs-tag-indicator" ref="indicator"></li>
 		</ul>
 		<section class="container">
 			<component :is="slots[selectedIndex]" :key="selectedIndex"></component>
@@ -58,9 +58,9 @@ export default {
 
 <style lang="scss">
 @import "../common/scss/var.scss";
-.c-tabs {
+.m-tabs {
 	$padding: 4px;
-	ul.c-tabs-tag {
+	ul.m-tabs-tag {
 		position: relative;
 		vertical-align: top;
 		border-bottom: 1px solid #ddd;
@@ -76,7 +76,7 @@ export default {
 			&.selected {
 				color: $highlight;
 			}
-			&.c-tabs-tag-indicator {
+			&.m-tabs-tag-indicator {
 				position: absolute;
 				bottom: -1px;
 				left: 0;

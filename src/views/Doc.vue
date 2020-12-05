@@ -14,17 +14,8 @@
 				</ul>
 				<h2>组件</h2>
 				<ul>
-					<li>
-						<router-link to="/doc/button">Button 按钮</router-link>
-					</li>
-					<li>
-						<router-link to="/doc/switch">Switch 滑动开关</router-link>
-					</li>
-					<li>
-						<router-link to="/doc/modal">Modal 对话框</router-link>
-					</li>
-					<li>
-						<router-link to="/doc/tabs">Tabs 标签页</router-link>
+					<li v-for="navItem in navMap" :key="navItem.title">
+						<router-link :to="navItem.path">{{ navItem.title }}</router-link>
 					</li>
 				</ul>
 			</aside>
@@ -50,6 +41,14 @@ import Button from "../libs/Button.vue";
 import { ref, onMounted } from "vue";
 export const asideVisiable = ref(true);
 export const iconVisiable = ref(false);
+export const navMap = [
+	{ title: "Button 按钮", path: "/doc/button" },
+	{ title: "Switch 滑动开关", path: "/doc/switch" },
+	{ title: "Tabs 标签页", path: "/doc/tabs" },
+	{ title: "Icon 图标", path: "/doc/icon" },
+	{ title: "Input 输入框", path: "/doc/input" },
+	{ title: "Modal 对话框", path: "/doc/modal" },
+];
 const iconVisiableInit = () => {
 	if (document.documentElement.clientWidth < 500) {
 		iconVisiable.value = true;

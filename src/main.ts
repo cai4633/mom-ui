@@ -50,6 +50,14 @@ const router = createRouter({
           path: "tabs",
           component: () => import("./views/tabs-demo.vue"),
         },
+        {
+          path: "input",
+          component: () => import("./views/input-demo.vue"),
+        },
+        {
+          path: "icon",
+          component: () => import("./views/icon-demo.vue"),
+        },
       ],
     },
     {
