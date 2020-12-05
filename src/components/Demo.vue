@@ -7,32 +7,35 @@
 					<component :is="component"></component>
 				</div>
 				<div class="demo-code-wrapper">
-					<div class="demo-action"><Button type="primary" size="small" @click="toggle">查看源码</Button></div>
-					<div class="demo-code" v-if="codeVisible">
-						<pre v-highlight><code v-text="component._source"></code></pre>
+					<div class="demo-action">
+						<Button type="primary" size="small" @click="toggle" v-if="!codeVisible">查看源码</Button>
+						<Button type="primary" size="small" @click="toggle" v-else>隐藏源码</Button>
 					</div>
+					<transition name="slide">
+						<div class="demo-code" v-show="codeVisible">
+							<pre v-highlight><code v-text="component._source"></code></pre>
+						</div>
+					</transition>
 				</div>
 			</div>
 		</section>
 	</div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import Button from "../libs/Button.vue";
 import { ref } from "vue";
 import TabsDemo from "../components/Tabs.demo.vue";
 // TODO 查看隐藏代码
+
+export const codeVisible = ref(false);
+export const toggle = () => {
+	codeVisible.value = !codeVisible.value;
+};
 export default {
 	components: { Button },
 	props: {
 		component: { required: true },
-	},
-	setup(props) {
-		const codeVisible = ref(false);
-		const toggle = () => {
-			codeVisible.value = !codeVisible.value;
-		};
-		return { codeVisible, toggle };
 	},
 };
 </script>
@@ -45,6 +48,7 @@ export default {
 		.demo-container {
 			width: 100%;
 			overflow-x: auto;
+			overflow-y: hidden;
 			box-shadow: inset 0 0 2px #aaa;
 			.demo-component {
 				padding: 30px;
