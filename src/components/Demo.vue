@@ -12,7 +12,7 @@
 						<Button type="primary" size="small" @click="toggle" v-else>隐藏源码</Button>
 					</div>
 					<transition name="slide">
-						<div class="demo-code" v-show="codeVisible">
+						<div class="demo-code canSelectText" v-show="codeVisible">
 							<pre v-highlight><code v-text="component._source"></code></pre>
 						</div>
 					</transition>
