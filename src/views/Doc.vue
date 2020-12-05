@@ -123,11 +123,31 @@ export default {
 					height: 1.5em;
 				}
 			}
-			.markdown-body {
+			::v-deep .markdown-body {
 				height: 100%;
 				flex: 1;
 				min-width: 100px;
 				max-width: 600px;
+				.m-api-wrapper {
+					//api样式
+					margin-top: 3em;
+					.vuedoc {
+						table {
+							tbody {
+								tr {
+									td {
+										&:nth-child(2) {
+											color: rgba(0, 0, 0, 0.85);
+										}
+										&:nth-child(3) {
+											color: $td-type-color;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
