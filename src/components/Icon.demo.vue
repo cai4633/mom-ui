@@ -12,7 +12,6 @@
 </template>
 <script lang="ts">
 import Icon from "../libs/Icon.vue";
-import "//at.alicdn.com/t/font_2004957_xok71qhw47e.js";
 export default {
 	components: { Icon },
 };

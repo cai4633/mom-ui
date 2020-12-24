@@ -8,7 +8,9 @@
 				</div>
 				<div class="demo-code-wrapper">
 					<div class="demo-action">
-						<Button type="primary" size="small" @click="toggle" v-if="!codeVisible">查看源码</Button>
+						<Button type="primary" size="small" @click="toggle" v-if="!codeVisible"
+							>查看源码</Button
+						>
 						<Button type="primary" size="small" @click="toggle" v-else>隐藏源码</Button>
 					</div>
 					<transition name="slide">
@@ -22,20 +24,32 @@
 	</div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import Button from "../libs/Button.vue";
 import { ref } from "vue";
 import TabsDemo from "../components/Tabs.demo.vue";
 // TODO 查看隐藏代码
 
-export const codeVisible = ref(false);
-export const toggle = () => {
-	codeVisible.value = !codeVisible.value;
-};
+interface Props {
+	component: any;
+	defaultVisible: boolean;
+}
+
 export default {
 	components: { Button },
 	props: {
 		component: { required: true },
+		defaultVisible: { type: Boolean, default: false },
+	},
+	setup(props: Props, context) {
+		const codeVisible = ref<boolean>(props.defaultVisible);
+		const toggle = () => {
+			codeVisible.value = !codeVisible.value;
+		};
+		return {
+			toggle,
+			codeVisible,
+		};
 	},
 };
 </script>

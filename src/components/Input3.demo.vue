@@ -7,7 +7,6 @@
 import Input from "../libs/Input.vue";
 import Icon from "../libs/Icon.vue";
 import { ref, watch } from "vue";
-import "//at.alicdn.com/t/font_1801507_4k3uimqugui.js";
 
 export default {
 	components: { Input, Icon },

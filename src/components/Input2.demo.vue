@@ -3,7 +3,7 @@
 <template>
 	<Input type="text" placeholder="size: big" v-model:value="content1" size="big"><Icon name="#icon-search" /></Input>
 	<Input type="text" placeholder="size: middle" v-model:value="content2" size="middle"><Icon name="#icon-search" /></Input>
-	<Input type="text" placeholder="size: small" v-model:value="content3" size="small" disabled><Icon name="#icon-search" /></Input>
+	<Input type="text" placeholder="size: small" v-model:value="content3" size="small"><Icon name="#icon-search" /></Input>
 </template>
 <script lang="ts">
 import Input from "../libs/Input.vue";

@@ -19,7 +19,7 @@
 					</li>
 				</ul>
 			</aside>
-			<main>
+			<main id="scrollContainer">
 				<div class="aside-button" v-if="iconVisiable">
 					<Button @click.stop="toggleAside" size="small" :no-border="true">
 						<svg class="icon" aria-hidden="true">
@@ -48,6 +48,7 @@ export const navMap = [
 	{ title: "Icon 图标", path: "/doc/icon" },
 	{ title: "Input 输入框", path: "/doc/input" },
 	{ title: "Modal 对话框", path: "/doc/modal" },
+	{ title: "BackTop 回到顶部", path: "/doc/backtop" },
 ];
 const iconVisiableInit = () => {
 	if (document.documentElement.clientWidth < 500) {
